@@ -1,0 +1,376 @@
+.room-list__title {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.room-list__wrapper .add-room,
+.room-list__wrapper .add-room-type {
+    color: white;
+    background-color: #479FFF;
+    font-size: 20px;
+    min-width: 8vw;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.add-option button+button {
+    margin-top: 10px;
+}
+
+.room-list__tool {
+    justify-content: space-between;
+}
+
+.tool {
+    width: 60%;
+    font-size: 20px;
+    white-space: nowrap;
+    background-color: var(--modal-background);
+    border-radius: 30px;
+    justify-content: space-between;
+}
+
+#filter-tool,
+#search-tool {
+    background-color: white;
+    border-radius: 30px;
+    margin: 4px;
+}
+
+#search-tool input {
+    width: 12vw;
+    margin: 4px;
+    font-size: 20px;
+    background-color: var(--modal-background);
+    border-radius: 30px;
+    padding: 6px 10px;
+}
+
+.select-field select {
+    background-color: var(--modal-background);
+    appearance: none;
+    height: 100%;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 6px 20px;
+    margin-right: 4px;
+}
+
+.add-option {
+    position: absolute;
+    z-index: 1;
+    margin-top: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    right: 20px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.add-option-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.add-option-wrapper::before {
+    content: "";
+    border-width: 12px 100px;
+    border-style: solid;
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    border-color: transparent;
+}
+
+.button-wrapper:hover .add-option {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.table-wrapper {
+    max-height: 64vh;
+    border-radius: 10px;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.room-list__wrapper table thead tr {
+    background-color: #66b0ff;
+    color: white;
+}
+
+.room-list__wrapper table th {
+    font-size: 22px;
+    height: 5vh;
+}
+
+.room-list__wrapper table td {
+    font-size: 22px;
+    height: 60px;
+}
+
+.room-list__wrapper table tr:nth-child(even) {
+    background-color: var(--modal-background);
+}
+
+.room-list__wrapper .table-btn div {
+    border: 2px solid black;
+    border-radius: 16px;
+    font-size: 22px;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+/* Modal thêm/chỉnh sửa phòng */
+.modal-room .modal-container {
+    width: 36vw;
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}
+
+.modal-name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.modal-form {
+    background-color: white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.modal-room .input-wrapper {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-wrapper label,
+.service-wrapper label {
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    appearance: none;
+    background-color: var(--modal-background);
+    height: 40px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.modal-room .refuse-btn {
+    background-color: white;
+    color: black;
+}
+
+/* Modal thông tin chi tiết phòng */
+.modal-room__detail .modal-container {
+    width: 56vw;
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}
+
+.modal-room__detail .modal-name {
+    color: #479FFF;
+    background-color: white;
+    padding: 4px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal-room__detail .detail-info {
+    align-items: unset;
+}
+
+.modal-room__detail .detail-info__left {
+    width: 52%;
+    margin-right: 10px;
+}
+
+.modal-room__detail .detail-info__right {
+    flex-grow: 1;
+}
+
+.modal-room__detail .room-info__wrapper {
+    background-color: white;
+    border-radius: 12px;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.modal-room__detail .room-info {
+    background-color: #479FFF;
+    color: white;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    gap: 20px
+}
+
+.modal-room__detail .room-id {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+
+}
+
+.modal-room__detail .room-id span:last-child {
+    font-size: 32px;
+    font-weight: 600;
+    align-self: flex-end;
+}
+
+.modal-room__detail .room-detail-info {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    align-items: center;
+}
+
+.modal-room__detail .customer-info,
+.modal-room__detail .service-info {
+    background-color: white;
+    border-radius: 10px;
+    color: #787878;
+    font-weight: bold;
+}
+
+.modal-room__detail .table-wrapper {
+    max-height: 20vh;
+    overflow-y: scroll;
+}
+
+.modal-room__detail .table-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-room__detail .service-info .table-wrapper {
+    max-height: 34vh;
+}
+
+.modal-room__detail .info-name {
+    color: #479FFF;
+}
+
+.modal-room__detail .header-table {
+    background-color: #e2e2e2;
+    color: #787878;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.modal-room__detail .table-wrapper tbody tr {
+    height: 36px;
+    font-weight: 500;
+}
+
+.service-info tbody tr td:first-child div {
+    display: flex;
+    align-items: center;
+}
+.service-info tbody tr td:first-child input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
+}
+.service-info tbody tr td input[type="number"] {
+    width: 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.service-info tbody tr td input[type="number"]::-webkit-inner-spin-button,
+.service-info tbody tr td input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.modal-room__detail .accept-btn {
+    background-color: #479FFF;
+    border-radius: 20px;
+    padding: 4px;
+    font-size: 16px;
+}
+
+
+/* Modal thêm loại phòng */
+.modal-room-type .modal-container {
+    width: 32vw;
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}
+
+.modal-room-type .modal-name {
+    color: white;
+    background-color: #479FFF;
+    padding: 4px;
+    border-radius: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal-room-type .input-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-room-type .accept-btn {
+    background-color: #479FFF;
+    border-radius: 20px;
+    width: 100%;
+    padding: 4px;
+    font-size: 22px;
+}
+
+.modal-room-type .table-wrapper {
+    border-radius: 20px;
+    margin-top: 10px;
+    max-height: 32vh;
+}
+
+.modal-room-type .table-wrapper thead tr {
+    background-color: #66b0ff;
+    color: white;
+    height: 5vh;
+    font-size: 18px;
+}
+
+.modal-room-type .table-wrapper tbody tr {
+    background-color: white;
+    font-size: 20px;
+    height: 30px;
+}
+
+/* Modal xác nhận xóa */
+.modal-delete .modal-container {
+    width: 22vw;
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}
+
+.modal-delete .modal-message {
+    font-size: 20px;
+}
+
+.modal-delete .accept-btn {
+    background-color: #FF2A2A;
+}

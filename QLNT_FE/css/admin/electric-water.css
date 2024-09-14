@@ -1,0 +1,135 @@
+.electric-water__title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.electric-water__container {
+    justify-content: space-around;
+}
+
+.electric-container,
+.water-container {
+    width: 44%;
+}
+
+.electric-container fieldset,
+.water-container fieldset {
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.electric-container legend,
+.water-container legend {
+    margin: 0 auto;
+    font-size: 44px;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #f2953f;
+    background-color: #fee7d1;
+}
+
+.water-container legend {
+    color: #0e99fd;
+    background-color: #e2effd;
+}
+
+.current-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-price label,
+.history-price label {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.current-price input {
+    background-color: #fee7d1;
+    color: #f2953f;
+    font-size: 80px;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    border-radius: 20px;
+    align-self: center;
+}
+
+.current-price input::-webkit-inner-spin-button, 
+.current-price input::-webkit-outer-spin-button { 
+    appearance: none;
+}
+
+.water-container .current-price input {
+    color: #0e99fd;
+    background-color: #e2effd;
+}
+
+.table-wrapper {
+    height: 28vh;
+    overflow-y: auto;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.history-price__table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.history-price__table th {
+    position: sticky;
+    top: 0;
+    background-color: #fee7d1;
+    color: #f2953f;
+    height: 36px;
+}
+
+.water-container .history-price__table th {
+    color: #0e99fd;
+    background-color: #e2effd;
+}
+
+.history-price__table th {
+    font-size: 24px;
+
+}
+
+.history-price__table td {
+    font-size: 20px;
+    text-align: center;
+    padding: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 10vw;
+}
+
+/* Modal xác nhận */
+.modal-name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.modal-confirm .modal-container {
+    width: 20vw;
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}
+
+.modal-confirm .modal-message{
+    font-size: 20px;
+}
+
+.modal-confirm .accept-btn {
+    background-color: var(--main-color);
+}

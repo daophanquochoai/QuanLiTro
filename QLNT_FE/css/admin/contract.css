@@ -1,0 +1,189 @@
+.contract-list__wrapper {
+    position: relative;
+}
+
+.contract-list__title {
+    width: 60%;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.contract-list__tool {
+    justify-content: space-between;
+}
+
+.tool {
+    font-size: 20px;
+    white-space: nowrap;
+    background-color: var(--modal-background);
+    border-radius: 30px;
+    justify-content: space-between;
+}
+
+#filter-tool {
+    background-color: white;
+    border-radius: 30px;
+    margin: 4px;
+}
+
+.select-field select {
+    background-color: var(--modal-background);
+    appearance: none;
+    height: 100%;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 6px 20px;
+    margin-right: 4px;
+}
+
+.add-contract {
+    color: white;
+    background-color: #479FFF;
+    font-size: 20px;
+    min-width: 8vw;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.contract-list__container {
+    margin: 20px 80px;
+    height: 72vh;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 60px;
+}
+
+.contract-list__container::-webkit-scrollbar {
+    display: none;
+}
+
+.room {
+    background-color: #e86a6a;
+    color: #e86a6a;
+    font-size: 24px;
+    transition: all 0.4s ease;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.room.available {
+    background-color: #469FFF;
+    color: #469FFF;
+}
+
+.room:hover {
+    box-shadow: 0 4px 10px 0px #bbbbbb;
+    transform: scale(1.02);
+}
+
+.room div:first-child {
+    color: white;
+}
+
+.room div:last-child {
+    background-color: white;
+    border-radius: 10px;
+    margin: 4px;
+    font-size: 64px;
+    font-weight: 600;
+    padding: 20px;
+}
+
+/* Modal tạo hoặc xem hợp đồng */
+.modal-contract .modal-container {
+    width: 36vw;
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}
+
+.modal-contract .modal-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 15px;
+    color: #0094FF;
+}
+
+.modal-contract .modal-name .contract-id {
+    background-color: #76BBFB;
+    color: white;
+    border-radius: 10px;
+    margin: 4px;
+    padding: 10px;
+}
+
+.modal-contract .modal-name div {
+    flex: 1;
+    text-align: center;
+}
+
+.modal-contract .modal-form {
+    background-color: white;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.modal-contract .input-wrapper {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.modal-contract .input-wrapper label {
+    margin-bottom: 4px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.modal-contract .input-wrapper input,.input-wrapper select {
+    appearance: none;
+    background-color: var(--modal-background);
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.modal-contract .input-wrapper input[type="date"] {
+    border: 2px solid #55A2FC;
+    background-color: white;
+}
+
+.modal-contract .refuse-btn {
+    background-color: white;
+    color: black;
+}
+
+.modal-contract button{
+    width: 11vw;
+}
+
+/* Modal xác nhận xóa */
+.modal-delete .modal-container {
+    width: 22vw;
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}
+
+.modal-delete .modal-name{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.modal-delete .modal-message {
+    font-size: 20px;
+}
+
+.modal-delete .accept-btn {
+    background-color: #FF2A2A;
+}

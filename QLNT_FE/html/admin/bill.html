@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLNT</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../../css/admin/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/admin/bill.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div id="toast"></div>
+    <div class="main-content">
+        <div class="bill-list__wrapper m-20">
+            <div class="bill-list__title">DANH SÁCH HÓA ĐƠN</div>
+            <div class="bill-list__tool center m-20">
+                <div class="tool center">
+                    <div id="filter-tool" class="center">
+                        <span class="p-10">Lọc</span>
+                        <div class="select-field">
+                            <select class="filter-month">
+                            </select>
+                        </div>
+                        <div class="select-field">
+                            <select class="filter-year">
+                            </select>
+                        </div>
+                    </div>
+                    <div id="filter-tool" class="center">
+                        <span class="p-10">Trạng thái</span>
+                        <div class="select-field">
+                            <select class="filter-status">
+                                <option value="0">Tất cả</option>
+                                <option value="1">Chưa thanh toán</option>
+                                <option value="2">Đã thanh toán</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <button onclick="openAddBillModal()" class="add-bill">
+                        Thêm hóa đơn
+                    </button>
+                </div>
+            </div>
+            <div class="bill-list__container">
+                <!-- Đổ dữ liệu ở đây -->
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-bill">
+        <div class="modal-container p-10">
+            <form>
+                <input id="bill-id" type="number" disabled hidden />
+                <fieldset>
+                    <legend>Tạo hóa đơn</legend>
+                    <div class="room-field center">
+                        <span class="mr-10">Phòng</span>
+                        <select id="room-id">
+                            <!-- Đổ data vào -->
+                        </select>
+                    </div>
+                    <div class="period center">
+                        <label for="begin-date">Từ
+                            <input type="date" id="begin-date" readonly>
+                        </label>
+                        <label for="end-date">đến
+                            <input type="date" id="end-date" readonly>
+                        </label>
+                    </div>
+                    <input type="month" id="bill-month">
+                    <!-- Thông tin hóa đơn -->
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width: 30%;"></th>
+                                    <th style="width: 15%;">Chỉ số</th>
+                                    <th style="width: 17%;">Giá</th>
+                                    <th style="width: 13%;">Đơn vị</th>
+                                    <th style="width: 25%;">Thành tiền</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="bill-info">
+                        <div class="table-wrapper bill">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 30%;">Giá phòng</td>
+                                        <td style="width: 15%;">1</td>
+                                        <td style="width: 17%;" class="room-price"></td>
+                                        <td style="width: 13%;"></td>
+                                        <td style="width: 25%;" class="room-total-price" value=""></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 30%;">Số điện ban đầu</td>
+                                        <td style="width: 15%;">
+                                            <input class="electric-number_begin" type="number" min="0" value="0" />
+                                        </td>
+                                        <td style="width: 17%;"></td>
+                                        <td style="width: 13%;">kWh</td>
+                                        <td style="width: 25%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td tyle="width: 30%;">Số điện kết thúc</td>
+                                        <td style="width: 15%;">
+                                            <input class="electric-number_end" type="number" value="0" />
+                                        </td>
+                                        <td style="width: 17%;"></td>
+                                        <td style="width: 13%;">kWh</td>
+                                        <td style="width: 25%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lượng sử dụng</td>
+                                        <td class="electric-consume">0</td>
+                                        <td class="electric-price"></td>
+                                        <td>kWh</td>
+                                        <td class="electric-total-price" value="">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 30%;">Số nước ban đầu</td>
+                                        <td style="width: 15%;">
+                                            <input class="water-number_begin" type="number" min="0" value="0" />
+                                        </td>
+                                        <td style="width: 17%;"></td>
+                                        <td style="width: 13%;">m&sup3</td>
+                                        <td style="width: 25%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 30%;">Số nước kết thúc</td>
+                                        <td style="width: 15%;">
+                                            <input class="water-number_end" type="number" value="0" />
+                                        </td>
+                                        <td style="width: 17%;"></td>
+                                        <td style="width: 13%;">m&sup3</td>
+                                        <td style="width: 25%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lượng sử dụng</td>
+                                        <td class="water-consume">0</td>
+                                        <td class="water-price"></td>
+                                        <td>m&sup3</td>
+                                        <td class="water-total-price" value="">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-wrapper table-service">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="10">Phòng không sử dụng dịch vụ</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="total center">
+                        <span style="width: 30%;">Tổng</span>
+                        <span style="width: 25%;" class="total-price mr-10">0</span>
+                    </div>
+                    <div class="note">
+                        <span>Ghi chú</span>
+                        <textarea name="" id="note"></textarea>
+                    </div>
+                    <div id="bill-note"></div>
+                </fieldset>
+                <div class="modal-btn center">
+                    <button type="button" class="refuse-btn">Hủy</button>
+                    <button type="submit" class="accept-btn">Tạo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../../js/admin/base.js"></script>
+<script src="../../js/admin/bill.js"></script>
+
+</html>

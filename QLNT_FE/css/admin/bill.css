@@ -1,0 +1,272 @@
+.bill-list__title {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.bill-list__tool {
+    justify-content: space-between;
+}
+
+.tool {
+    width: 60%;
+    font-size: 20px;
+    white-space: nowrap;
+    background-color: var(--modal-background);
+    border-radius: 30px;
+    justify-content: space-between;
+}
+
+#filter-tool,
+#search-tool {
+    background-color: white;
+    border-radius: 30px;
+    margin: 4px;
+}
+
+#search-tool input {
+    width: 12vw;
+    margin: 4px;
+    font-size: 20px;
+    background-color: var(--modal-background);
+    border-radius: 30px;
+    padding: 6px 10px;
+}
+
+.select-field select {
+    background-color: var(--modal-background);
+    appearance: none;
+    height: 100%;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 6px 20px;
+    margin-right: 4px;
+}
+
+.add-bill {
+    color: white;
+    background-color: #479FFF;
+    font-size: 20px;
+    min-width: 8vw;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.bill-list__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0px 20px;
+    gap: 10px 40px;
+    max-height: 68vh;
+    overflow-y: scroll;
+}
+
+.bill-list__container::-webkit-scrollbar {
+    display: none;
+}
+
+.room {
+    margin: 8px;
+    background-color: #FFEAEA;
+    color: #A60000;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.room:hover {
+    box-shadow: 0 2px 10px 0px rgb(180, 180, 180);
+    transform: scale(1.01);
+}
+
+.room.paid {
+    background-color: #E2EFFD;
+    color: #469FFF;
+}
+
+.room-id {
+    text-align: right;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.modal-bill .modal-container {
+    width: 32vw;
+    background-color: var(--modal-background);
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.modal-bill fieldset {
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-bill legend {
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #469FFF;
+    color: #469FFF;
+    border-radius: 20px;
+    padding: 4px 20px;
+    background-color: white;
+}
+
+.room-field {
+    width: 12vw;
+    margin: 0 auto 4px;
+    padding: 0 20px;
+    border-radius: 20px;
+    background-color: #E2EFFD;
+    color: #469FFF;
+    font-size: 20px;
+}
+
+.room-field select {
+    text-align: center;
+    width: 76px;
+    background-color: #E2EFFD;
+    color: #469FFF;
+    font-size: 36px;
+    font-weight: bold;
+    appearance: none;
+}
+
+.room-field option {
+    font-size: 20px;
+}
+
+.period label {
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.period input[type="date"] {
+    width: 80px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+input[type="month"] {
+    text-align: center;
+    font-size: 14px;
+}
+
+.period input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+input[type="month"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.bill-info {
+    max-height: 44vh;
+    overflow-y: scroll;
+    padding: 2px;
+}
+
+.bill-info::-webkit-scrollbar {
+    width: 4px;
+}
+.bill-info::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.bill-info>.table-wrapper:not(:first-child) {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.bill-info>.table-wrapper:not(:first-child)+.table-wrapper {
+    margin-top: 10px;
+}
+
+.bill-info>.table-wrapper:not(:first-child, :last-child) tr:last-child td {
+    border-top: 1px solid lightgray;
+}
+
+
+.table-wrapper table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.table-wrapper th {
+    font-size: 14px;
+    height: 4vh;
+}
+
+.table-wrapper td {
+    font-size: 14px;
+    font-weight: 300;
+    height: 3.6vh;
+    text-align: center;
+    padding: 4px;
+}
+
+.table-wrapper td input{
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    background-color: var(--modal-background);
+    appearance: none;
+}
+.table-wrapper td input::-webkit-inner-spin-button{
+    display: none;
+}
+
+.table-wrapper td:nth-child(2),
+.table-wrapper td:nth-child(3),
+.table-wrapper td:nth-child(5) {
+    font-weight: 500;
+}
+
+.total {
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 4px;
+}
+.total span:last-child{
+    font-size: 20px;
+}
+.note{
+    font-size: 12px;
+    font-weight: 700;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.note textarea{
+    flex-grow: 1;
+    resize: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 2px 10px;
+    margin: 4px 0;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    overflow: hidden;
+}
+fieldset>div:last-child{
+    font-size: 12px;
+    text-align: center;
+    font-weight: 550;
+    color: #0094FF;
+}
+
+.modal-bill .refuse-btn {
+    background-color: white;
+    color: black;
+}

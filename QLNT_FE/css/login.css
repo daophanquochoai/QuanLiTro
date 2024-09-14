@@ -1,0 +1,184 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    font-family: Inter, sans-serif;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.background {
+    background: url(../imgs/background/motel.jpg) center center / cover no-repeat;
+    position: fixed;
+    z-index: -1;
+    width: 102vw;
+    height: 120vh;
+    bottom: 0;
+    left: 0;
+    filter: brightness(0.9);
+}
+
+.login-form {
+    width: 30vw;
+    backdrop-filter: blur(20px);
+    box-shadow: 1px 1px 20px 1px black;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.login-form__title {
+    font-size: 40px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login-form__input {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    width: 100%;
+    margin: 20px 0;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+}
+
+.login-form__input:focus-within {
+    border: 2px solid white;
+}
+
+.login-form__input input {
+    height: 100%;
+    width: 90%;
+    background-color: transparent;
+    padding: 0 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.login-form__input input::placeholder {
+    color: white;
+    font-size: 18px;
+}
+
+.login-form__input i {
+    cursor: pointer;
+}
+
+.login-form__forgot-password {
+    text-align: right;
+}
+
+.login-form__login-button {
+    height: 40px;
+    margin: 20px 0;
+}
+
+.login-form__login-button button {
+    background-color: white;
+    outline: none;
+    border: none;
+    font-size: 24px;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.login-form a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+/* Toast message */
+#toast {
+    position: fixed;
+    top: 80px;
+    right: 40px;
+    z-index: 1;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 40px));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast {
+    padding: 10px 0;
+    min-width: 300px;
+    max-width: 350px;
+    background-color: white;
+    border-left: 4px solid;
+    box-shadow: 1px 2px 10px grey;
+    animation: slideInLeft 0.5s ease, fadeOut 1s ease 3s forwards;
+    transition: all 0.3s ease;
+}
+
+.toast+.toast {
+    margin-top: 20px
+}
+
+.toast__icon {
+    font-size: 24px;
+}
+
+.toast__icon,
+.toast__close {
+    padding: 0 16px;
+}
+
+.toast__body {
+    flex-grow: 1;
+    color: black;
+}
+
+.toast__success {
+    border-color: #43d158;
+}
+
+.toast__success .toast__icon,
+.toast__success .toast__title {
+    color: #43d158;
+}
+
+.toast__error {
+    border-color: #e04d28;
+}
+
+.toast__error .toast__icon,
+.toast__error .toast__title {
+    color: #e04d28;
+}

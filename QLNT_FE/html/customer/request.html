@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./../../../css/customer/request.css">
+    <link rel="stylesheet" type="text/css" href="./../../../css/customer/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Yêu cầu</title>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div id="toast"></div>
+        <div class="wrapper">
+            <div class="wrapper-title">
+                <h1>TẠO VÀ XEM YÊU CẦU</h1>
+            </div>
+
+            <div class="body">
+                <div class="create-request">
+                    <div id="header">
+                        <span>TẠO YÊU CẦU</span>
+                    </div>
+
+                    <div id="body__request">
+                        <form id="send__request__form">
+                            <div id="content-request">
+                                <span>Nội dung yêu cầu</span>
+                            </div>
+    
+                            <div id="wrapper-input">
+                                <textarea id="input-content" placeholder="Viết vào đây..."></textarea>
+                            </div>    
+                            <div id="wrapper-send-btn">
+                                <span id="warning">*Vui lòng nhập nội dung yêu cầu!</span>
+                                <button id="send-btn" type="submit">Gửi yêu cầu</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="wrapper-history-request">
+                    <div id="history-status">
+                        <span>LỊCH SỬ VÀ TRẠNG THÁI YÊU CẦU</span>
+                    </div>
+
+                    <div id="detail">
+                        <div id="body-list">
+                            <table id="history">
+                                <tr class="table-header">
+                                    <th id="order-col">STT</th>
+                                    <th>Nội dung</th>
+                                    <th id="time-col">Thời gian</th>
+                                    <th id="status-col">Trạng thái</th>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/customer/base.js"></script>
+<script src="../../js/customer/request.js"></script>
+</html>
+
+
+
+
+

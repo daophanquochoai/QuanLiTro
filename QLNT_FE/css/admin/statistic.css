@@ -1,0 +1,111 @@
+.statistic__wrapper {
+    height: 86vh;
+}
+
+.frame-left,
+.frame-right {
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+.frame-right {
+    width: 40%;
+}
+
+.frame {
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.title {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    height: 4vh;
+}
+
+.container {
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    margin: 0 4px 4px 4px;
+    position: absolute;
+    top: 4vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.statistic-info {
+    justify-content: space-around;
+    margin: 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px 0px #bbbbbb;
+    height: 42%;
+}
+
+.statistic-info span:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    width: 48%;
+    text-align: center;
+}
+
+.statistic-info span:last-child {
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.statistic-profit .statistic-info {
+    flex-direction: column;
+    height: 86%;
+}
+
+.statistic-job {
+    background-color: #9BCBFF;
+    height: 60%;
+}
+
+.statistic-profit {
+    background-color: #FFC657;
+    color: #FFC657;
+    height: 40%;
+}
+
+.statistic-bill {
+    background-color: #FF7D7D;
+    color: #FF7D7D;
+    height: 50%;
+}
+
+.statistic-room {
+    background-color: #FFAC7D;
+    color: #FFAC7D;
+    height: 50%;
+}
+
+.frame-right .statistic-info:first-child {
+    color: #0097EC;
+}
+
+/* Biểu đồ */
+
+.chartMenu p {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.chartCard {
+    width: 36vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chartBox {
+    width: 100%;
+    padding: 20px;
+    background: white;
+}

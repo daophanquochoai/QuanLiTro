@@ -1,0 +1,268 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+}
+
+button {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover, .dropdown__item:hover {
+    opacity: 0.8;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 60px;
+}
+
+.wrapper-title {
+    background-color: #7EB9FF;
+    margin-top: 70px;
+    border-radius: 15px;
+}
+
+
+.wrapper-title > h1 {
+    padding: 25px;
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+}
+
+.create-request {
+    border: 2px solid #7EB9FF;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 450px; 
+    height: 100%;
+}
+
+#header {
+    background-color: #7EB9FF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#header > span {
+    color: white;
+    font-weight: 600;
+    padding: 5px 0;
+}
+
+#body__request {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 24px;
+}
+
+#send__request__form {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 40px 2fr 40px;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 10px 0;
+    row-gap: 10px;
+}
+
+#content-request {
+    background-color: #7EB9FF;
+    border-radius: 5px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+}
+
+#content-request > span {
+    color: white;
+    padding: 10px 10px;
+    font-weight: 500;
+}
+
+#wrapper-input {
+    width: 95%;
+    height: 100%;
+}
+
+#input-content {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #eeeeee;
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+#wrapper-send-btn {
+    width: 95%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10px 45px;
+    align-items: center;
+    row-gap: 8px;
+}
+
+#warning {
+    color: #FF6868;
+    font-size: smaller;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+#send-btn {
+    width: 100%;
+    height: 100%;
+    background-color: #469FFF;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#wrapper-history-request {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid #7EB9FF;
+    border-radius: 15px;
+}
+
+#history-status {
+    background-color: #7EB9FF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#history-status > span {
+    color: white;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+#detail {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 12px;
+}
+
+
+#body-list {
+    height: 400px;
+    overflow: scroll;
+    scrollbar-width: none;
+    position: relative;
+    width: 100%;
+}
+
+
+#history {
+    width: 100%;
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+}
+
+#history > tr {
+    height: 100px;
+}
+
+.table-header > th {
+    background-color: #E2EFFD;
+    font-weight: 550;
+    padding: 10px 5px;
+    position: sticky;
+    top: 0;
+    color: #469FFF;
+}
+
+.table__content__odd {
+    height: 70px;
+    background-color: #E2EFFD;
+    border-radius: 5px;
+    color: #50657b;
+}
+
+.table__content__odd > td, .table__content__even > td {
+    font-weight: 400;
+}
+
+.table__content__even {
+    height: 70px;
+    color: #50657b;
+}
+
+#order-col {
+    border-top-left-radius: 5px; 
+    border-bottom-left-radius: 5px;
+    padding-left: 5px
+}
+
+#time-col {
+    padding-right: 50px; 
+    text-wrap: nowrap;
+}
+
+#status-col {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; 
+}
+
+.contentRequest {
+    width: 360px;
+    padding: 0px 16px;
+}
+
+.createTime {
+    padding-left: 5px;
+    width: 152px;
+}
+
+.order {
+    text-align: center;
+}
+
+.status {
+    text-wrap: nowrap;
+    padding: 0 10px;
+}
+
+.body {
+    display: flex;
+    gap: 50px
+}
+
+#no__request {
+    color: #469FFF;
+    font-weight: bold;
+    margin-top: 20px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLNT</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../../css/admin/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/admin/request.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div id="toast"></div>
+    <div class="main-content">
+        <div class="request-list__wrapper m-20">
+            <div class="request-list__title">DANH SÁCH CÁC YÊU CẦU</div>
+            <div class="unsolved-request p-20">
+                <div class="request-list__name">Chưa xử lý</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 5%;">STT</th>
+                                <th style="width: 40%;">Nội dung</th>
+                                <th style="width: 20%;">Người gửi</th>
+                                <th style="width: 5%;">Phòng</th>
+                                <th style="width: 20%;">Thời gian</th>
+                                <th style="width: 10%;">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- đổ data vào  -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="solved-request p-20">
+                <div class="request-list__name">Đã xử lý</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 5%;">STT</th>
+                                <th style="width: 40%;">Nội dung</th>
+                                <th style="width: 20%;">Người gửi</th>
+                                <th style="width: 5%;">Phòng</th>
+                                <th style="width: 20%;">Thời gian</th>
+                                <th style="width: 10%;">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- đổ data vào  -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-request__delete">
+        <div class="modal-container p-10">
+            <div class="formRequest">
+                <div class="modal-name center"> Xác nhận</div>
+                <div class="modal-message">
+                    Bạn có chắc chắn xóa ?
+                </div>
+                <div class="modal-btn center">
+                    <button class="refuse-btn">Hủy</button>
+                    <button class="accept-btn delete" >Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-request__solve">
+        <div class="modal-container p-10">
+            <div class="formRequest">
+                <div class="modal-name center"> Xác nhận</div>
+                <div class="modal-message">
+                    Đã đáp ứng yêu cầu?
+                </div>
+                <div class="modal-btn center">
+                    <button class="refuse-btn">Hủy</button>
+                    <button class="accept-btn accept">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/admin/base.js"></script>
+<script src="../../js/admin/request.js"></script>
+
+</html>

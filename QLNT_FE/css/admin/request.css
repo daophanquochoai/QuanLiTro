@@ -1,0 +1,105 @@
+.request-list__title {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.solved-request {
+    border: 1px solid #0062D5;
+    border-radius: 20px;
+    margin: 16px 0;
+}
+
+.unsolved-request {
+    border: 1px solid #C00000;
+    border-radius: 20px;
+}
+
+.request-list__name {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.table-wrapper {
+    height: 28vh;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.table-wrapper table {
+    width: 100%;
+    border-spacing: 0;
+    position: relative;
+}
+
+.solved-request thead tr:first-child {
+    position: sticky;
+    top: 0;
+    background-color: #B0D6FF;
+    color: #002C6F;
+}
+
+.unsolved-request thead tr:first-child {
+    position: sticky;
+    top: 0;
+    background-color: #FFD7D7;
+    color: #A60000;
+}
+
+.table-wrapper thead th {
+    font-size: 22px;
+    height: 5vh;
+}
+
+.table-wrapper tbody td {
+    font-size: 22px;
+    height: 56px;
+    text-align: center;
+    padding: 4px;
+}
+
+.table-wrapper tbody td:nth-child(2) {
+    text-align: start;
+}
+
+.solved-request tr:nth-child(even) {
+    background-color: #E2EFFD;
+}
+
+.unsolved-request tr:nth-child(even) {
+    background-color: #FFEAEA;
+}
+
+/* Modal xác nhận xóa */
+.modal-request__delete .modal-container {
+    width: 20vw;
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}
+.modal-request__delete .accept-btn{
+    background-color: #FF2A2A;
+}
+.modal-name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.modal-form {
+    background-color: white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* xác nhận */
+.modal-request__solve .accept-btn{
+    background-color: #27c94a;
+}
+.modal-request__solve .modal-container {
+    width: 20vw;
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}

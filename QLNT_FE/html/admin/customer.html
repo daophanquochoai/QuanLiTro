@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0">
+    <title>QLNT</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../../css/admin/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/admin/customer.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div id="toast"></div>
+    <div class="main-content">
+        <div class="customer-list__wrapper m-20">
+            <div class="customer-list__title">DANH SÁCH KHÁCH THUÊ TRỌ</div>
+            <button onclick="openAddCustomerModal()" class="add-customer">
+                Thêm khách thuê
+            </button>
+            <div class="customer-list__tool center m-20">
+                <div id="filter-tool" class="center">
+                    <span class="p-10">Lọc</span>
+                    <div class="select-field">
+                        <select>
+                            <option value="0" selected>Khách đang ở</option>
+                            <option value="1">Khách đã từng ở</option>
+                            <option value="2">Tất cả</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="search-tool" class="center">
+                    <label>
+                        <input type="search" placeholder="Tìm kiếm"="off">
+                    </label>
+                    <div class="select-field center">
+                        <select>
+                            <option value="1">Họ và tên lót</option>
+                            <option value="2">Tên</option>
+                            <option value="5">SĐT</option>
+                            <option value="6">Email</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 7%;">STT<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 15%;">Họ và tên lót<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 10%;">Tên<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 10%;">Giới tính<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 13%;">Ngày sinh<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 13%;">SĐT<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 22%;">Email<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 10%;">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-customer">
+        <div class="modal-container p-10">
+            <form>
+                <div class="modal-wrapper">
+                    <div class="customer-info">
+                        <div class="modal-name center">
+                            <div class="room-id center">
+                                <span>Phòng:</span>
+                                <select id="room_id" required>
+                                    <!-- Đổ data ở đây -->
+                                </select>
+                            </div>
+                            <div class="modal-type"></div>
+                        </div>
+                        <div class="modal-form center p-20">
+                            <input type="text" id="customer_id" hidden>
+                            <div class="input-wrapper">
+                                <label for="lastname">Họ và tên lót:</label>
+                                <input type="text" id="lastname" autocomplete="off" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="firstname">Tên:</label>
+                                <input type="text" id="firstname" autocomplete="off" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label>Giới tính:</label>
+                                <div class="gender-field">
+                                    <label for="male" style="margin-right: 20px;">
+                                        Nam
+                                        <input type="radio" id="male" name="gender" value="Nam" checked>
+                                    </label>
+                                    <label for="female">
+                                        Nữ
+                                        <input type="radio" id="female"  name="gender" value="Nữ">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="birth">Ngày sinh:</label>
+                                <input type="date" id="birth" autocomplete="off" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="identifier">Số CCCD:</label>
+                                <input type="text" id="identifier" pattern="[0-9]{12}" autocomplete="off" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" autocomplete="off" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="phone_number">Số điện thoại:</label>
+                                <input type="text" id="phone_number" pattern="[0]{1}[0-9]{9}" autocomplete="off" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="address">Địa chỉ:</label>
+                                <input type="text" id="address" autocomplete="off" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customer-history">
+                        <div class="modal-name center">
+                            <div class="modal-type">LỊCH SỬ THUÊ PHÒNG</div>
+                        </div>
+                        <div class="history-list">
+                            <div class="history-record p-10">
+                                <!-- Đổ dữ liệu ở đây -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-btn center">
+                    <button type="button" class="refuse-btn">Hủy</button>
+                    <button type="submit" class="accept-btn"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal modal-customer__delete">
+        <div class="modal-container p-10">
+            <form>
+                <div class="modal-name center"> Xác nhận</div>
+                <div class="modal-message">
+                    Bạn có chắc chắn muốn xóa khách thuê này không ?
+                </div>
+                <div class="modal-btn center">
+                    <button type="button" class="refuse-btn">Hủy</button>
+                    <button type="submit" class="delete-btn">Xóa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../../js/admin/base.js"></script>
+<script src="../../js/admin/customer.js"></script>
+
+</html>

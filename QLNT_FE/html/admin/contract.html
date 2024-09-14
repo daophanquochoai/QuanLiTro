@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLNT</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../../css/admin/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/admin/contract.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div id="toast"></div>
+    <div class="main-content">
+        <div class="contract-list__wrapper m-20">
+            <div class="contract-list__title">DANH SÁCH HỢP ĐỒNG</div>
+            <div class="contract-list__tool center m-20">
+                <div class="tool center">
+                    <div id="filter-tool" class="center">
+                        <span class="p-10">Trạng thái</span>
+                        <div class="select-field">
+                            <select>
+                                <option value="0" selected>Hợp đồng còn hiệu lực</option>
+                                <option value="1">Hợp đồng hết hiệu lực</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <button onclick="openAddContractModal()" class="add-contract">
+                        Tạo hợp đồng
+                    </button>
+                </div>
+            </div>
+            <div class="contract-list__container p-10">
+                <!-- đổ data ở đây -->
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-contract">
+        <div class="modal-container p-10">
+            <form>
+                <div class="modal-name center">
+                    <div class="contract-id">
+                        Mã hợp đồng: 
+                        <span id="contract_id">0</span>
+                    </div>
+                    <div class="modal-type"></div>
+                </div>
+                <div class="modal-form center p-20">
+                    <div class="input-wrapper">
+                        <label>Số phòng:</label>
+                        <select id="room_id" required>
+                            <!-- Đổ data ở đây -->
+                        </select>
+                    </div>
+                    <div class="input-wrapper">
+                        <label>Họ và tên người thuê:</label>
+                        <select id="customer_id" required>
+                            <!-- Đổ data ở đây -->
+                        </select>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="identifier">Số CCCD:</label>
+                        <input type="text" id="identifier" readonly>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" readonly>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="phone_number">Số điện thoại:</label>
+                        <input type="text" id="phone_number" readonly>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="created_date">Ngày tạo hợp đồng:</label>
+                        <input type="date" id="created_date" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="begin_date">Ngày bắt đầu thuê:</label>
+                        <input type="date" id="begin_date" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="end_date">Ngày kết thúc thuê:</label>
+                        <input type="date" id="end_date" required>
+                    </div>
+                </div>
+                <div class="modal-btn center">
+                    <button type="button" class="refuse-btn">Hủy</button>
+                    <button type="submit" class="accept-btn">Tạo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal modal-delete">
+        <div class="modal-container p-10">
+            <form>
+                <div class="modal-name center"> Xác nhận</div>
+                <div class="modal-message">
+                    Bạn có chắc chắn muốn hủy không ?
+                </div>
+                <div class="modal-btn center">
+                    <button type="button" class="refuse-btn">Hủy</button>
+                    <button type="submit" class="delete-btn">Xóa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../../js/admin/base.js"></script>
+<script src="../../js/admin/contract.js"></script>
+
+</html>

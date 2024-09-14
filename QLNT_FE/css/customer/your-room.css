@@ -1,0 +1,257 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.wrapper-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title-page {
+    background-color: #7EB9FF;
+    width: 98%;
+    margin-left: 20px;
+    margin-bottom: 70px;
+    border-radius: 15px;
+}
+
+
+.wrapper-title {
+    margin-top: 250px;
+    padding: 25px;
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+}
+
+
+.room-info {
+    width: 480px;
+    height: 300px;
+}
+
+.room-number {
+    background-color: #7EB9FF;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding-left: 40px;
+    gap: 10px;
+    width: 50%;
+    margin-left: 25px;
+    border-radius: 10px;
+}
+
+.room-number > h1 {
+    font-size: 50px;
+}
+
+
+.show-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+    margin-bottom: 100px;
+}
+
+.list-info {
+    border-spacing: 30px;
+}
+
+.larger {
+    width: 30%;
+    text-wrap: nowrap;
+}
+
+.bolder {
+    font-weight: 700;
+}
+
+.roommate-info, .show__service {
+    border: 5px solid #7EB9FF;
+    border-radius: 15px;
+    width: 500px;
+}
+
+.show__service {
+    width: 520px;
+}
+
+.show__service {
+    height: 250px;
+    margin-left: 25px;
+}
+
+.title-roommate, #title__show__service {
+    background-color: #7EB9FF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+}
+
+.title-roommate > h4, #title__show__service > span {
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.show-info-roommate {
+    height: 290px;
+    width: 100%;
+    overflow: scroll;
+    border-radius: 10px;
+    scrollbar-width: none;
+}
+
+#wrapper__body {
+    width: 100%;
+    height: 200px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.show-info-roommate > table {
+    border-spacing: 20px;
+}
+
+#list__all__service {
+    border-spacing: 25px;
+}
+
+#header__table__row {
+    background-color: #7EB9FF;
+    position: sticky;
+    top: 0;
+}
+
+.cancel__service {
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+} 
+
+
+.cancel__service:hover {
+    background-color: #FF8080;
+    color: white;
+} 
+
+.fa-solid {
+    padding: 10px;
+} 
+
+#header__table__row > th {
+    text-wrap: nowrap;
+    background-color: white;
+    padding-top: 5px;
+    color: #549efa;
+    font-weight: bold;
+}
+
+.title__table__service, .content__table__service {
+    text-align: center;
+}
+
+.wrapper__cancel__service {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#cancel__service__form {
+    background-color: #E2EFFD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+#title__cancel__service_form {
+    color: #479FFF;
+    font-weight: 600;
+    padding-top: 10px;
+    font-size: 17px;
+}
+
+.body__cancel__service__form {
+    background-color: white;
+    margin: 0 5px;
+    border-radius: 3px;
+    padding: 10px 15px;
+}
+
+.body__cancel__service__form > span {
+    font-size: 17px;
+}
+
+#handle__cancel__service {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+#accept__service__btn, #refuse__cancel__service__btn {
+    width: 100px;
+    height: 40px;
+    border-style: none;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#refuse__cancel__service__btn {
+    background-color: white;
+}
+
+#accept__service__btn {
+    background-color: #FF6868;
+    color: white;
+    font-weight: 600;
+}
+
+#no__roomate {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #479FFF;
+}
+
+
+
+

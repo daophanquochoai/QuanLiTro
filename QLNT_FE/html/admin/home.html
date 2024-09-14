@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLNT</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../../css/admin/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/admin/home.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div id="toast"></div>
+    <div class="main-content">
+        <div class="home__wrapper">
+            <div class="overview">
+                <a href="room.html" class="card" style="background-color: #358ed9">
+                    <div class="card__detail room">
+                        <div class="card-info">
+                            <h1></h1>
+                            <span>Phòng</span>
+                        </div>
+                        <div class="card-icon"><i class="fa-solid fa-bed"></i></div>
+                    </div>
+                    <div class="card__link">
+                        <span>Danh sách phòng</span>
+                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="customer.html" class="card" style="background-color: #b34238">
+                    <div class="card__detail customer">
+                        <div class="card-info">
+                            <h1></h1>
+                            <span>Khách thuê</span>
+                        </div>
+                        <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    </div>
+                    <div class="card__link">
+                        <span>Danh sách khách thuê </span>
+                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="request.html" class="card" style="background-color: #f5800d">
+                    <div class="card__detail request">
+                        <div class="card-info">
+                            <h1 class="soYeuCau"></h1>
+                            <span>Yêu cầu</span>
+                        </div>
+                        <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+                    </div>
+                    <div class="card__link">
+                        <span>Danh sách yêu cầu</span>
+                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="statistic.html" class="card" style="background-color: #00b306">
+                    <div class="card__detail profit">
+                        <div class="card-info">
+                            <h1 class="loiNhuan"></h1>
+                            <span>Lợi nhuận</span>
+                        </div>
+                        <div class="card-icon"><i class="fa-solid fa-money-bill-trend-up"></i></div>
+                    </div>
+                    <div class="card__link">
+                        <span>Thống kê </span>
+                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+            <div class="overview-list">
+                <div class="room-list table-frame">
+                    <div class="overview-list__title">Danh Sách Phòng</div>
+                    <div class="table-wrapper">
+                        <table class="overview-list__table table_room">
+                            <tr>
+                                <th style="width: 10%">Stt</th>
+                                <th style="width: 25%">Số Phòng</th>
+                                <th style="width: 35%">Loại Phòng</th>
+                                <th style="width: 30%">Giá</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="request-list table-frame">
+                    <div class="overview-list__title">Danh Sách Yêu Cầu</div>
+                    <div class="table-wrapper">
+                        <table class="overview-list__table table_request">
+                            <tr>
+                                <th style="width: 5%">Stt</th>
+                                <th style="width: 30%">Người Gửi</th>
+                                <th style="width: 40%">Yêu Cầu</th>
+                                <th style="width: 25%">Ngày Nhận</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/admin/base.js"></script>
+<script src="../../js/admin/home.js"></script>
+</html>

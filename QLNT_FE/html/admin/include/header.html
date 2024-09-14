@@ -1,0 +1,49 @@
+<div class="header__container center">
+    <a href="home.html" class="header__left">
+        <i class="fa-solid fa-hotel mr-10"></i>
+        Nhà Trọ 07
+    </a>
+    <div class="header__right">
+        <div class="notice-bell mr-20 center" data-number="0">
+            <img width="30" height="30" src="https://img.icons8.com/pulsar-color/30/appointment-reminders.png"
+                alt="appointment-reminders" />
+            <!-- Hiển thị khung thông báo -->
+            <div class="notice-dropdown">
+                <div class="notice-wrapper p-10 m-10">
+                    <div>Thông báo mới</div>
+                    <div class="notice-list">
+                        <!-- Đổ dữ liệu ở đây -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="account center">
+            <img class="mr-10" width="30" height="30" src="https://img.icons8.com/pulsar-color/30/reviewer-male.png"
+                alt="reviewer-male" />
+            <span style="flex: 1; text-align: center;">Chủ trọ</span>
+            <!-- Hiển thị khung tùy chọn -->
+            <div class="account-setting">
+                <div class="option-wrapper p-10 m-10">
+                    <div class="setting-option center" id="logout" onclick=openLogoutModal()>
+                        <span>Đăng xuất</span>
+                        <img width="29" height="29" src="https://img.icons8.com/pulsar-color/29/000000/exit.png"
+                            alt="exit" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal modal-logout">
+    <div class="modal-container">
+        <div class="modal-message">
+            <h2>Bạn có chắc chắn muốn đăng xuất không?</h2>
+        </div>
+        <div class="modal-btn center">
+            <button type="button" class="refuse-btn p-10">Không</button>
+            <button class="accept-btn p-10">Có</button>
+        </div>
+    </div>
+</div>

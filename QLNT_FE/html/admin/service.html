@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLNT</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../../css/admin/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/admin/service.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div id="toast"></div>
+    <div class="main-content">
+        <div class="service-list__wrapper m-20">
+            <div class="service-list__title">DANH SÁCH DỊCH VỤ</div>
+            <button onclick="openAddServiceModal()" class="add-service">
+                Thêm dịch vụ
+            </button>
+            <div class="service-list__container">
+                <div class="service-list__info">
+                    <!-- đổ data ở đây -->
+                </div>
+                <div class="service-list__statistic">
+                    <!-- Đổ dữ liệu ở đây -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-service">
+        <div class="modal-container p-10">
+            <form>
+                <div class="modal-name center"></div>
+                <div class="modal-form center p-20">
+                    <input type="text" id="service-id" disabled hidden>
+                    <div class="input-wrapper">
+                        <label for="service-name">Tên dịch vụ:</label>
+                        <input type="text" id="service-name" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="price">Giá:</label>
+                        <input type="number" id="price" required>
+                    </div>
+                </div>
+                <div class="modal-btn center">
+                    <button type="button" class="refuse-btn">Hủy</button>
+                    <button type="submit" class="accept-btn">Tạo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal modal-service__delete">
+        <div class="modal-container p-10">
+            <form>
+                <div class="modal-name center"> Xác nhận</div>
+                <div class="modal-message">
+                    Bạn có chắc chắn muốn xóa dịch vụ này ?
+                </div>
+                <div class="modal-btn center">
+                    <button type="button" class="refuse-btn">Hủy</button>
+                    <button type="submit" class="delete-btn">Xóa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../../js/admin/base.js"></script>
+<script src="../../js/admin/service.js"></script>
+
+</html>

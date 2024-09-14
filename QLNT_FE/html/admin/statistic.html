@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLNT</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../../css/admin/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/admin/statistic.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div class="main-content">
+        <div class="statistic__wrapper center m-20">
+            <div class="frame-left center m-10">
+                <div class="statistic-job frame m-10">
+                    <div class="title center">DOANH THU THEO THÁNG</div>
+                    <div class="container center p-10">
+                        <div class="chartCard">
+                            <div class="chartBox">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="statistic-profit frame m-10">
+                    <div class="title center">TỔNG DOANH THU CỦA NĂM</div>
+                    <div class="container p-10">
+                        <div class="statistic-info center">
+                            <span>Tổng doanh thu từ các hóa đơn đã thanh toán</span>
+                            <span class="span_doanhThu"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="frame-right center m-10">
+                <div class="statistic-bill frame m-10">
+                    <div class="title center">THỐNG KÊ HÓA ĐƠN</div>
+                    <div class="container p-10">
+                        <div class="statistic-info center">
+                            <span>Số lượng phòng đã thanh toán hóa đơn</span>
+                            <span class="span_phongDaThanhToan"></span>
+                        </div>
+                        <div class="statistic-info center">
+                            <span>Số lượng phòng chưa thanh toán hóa đơn</span>
+                            <span class="span_phongChuaDong"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="statistic-room frame m-10">
+                    <div class="title center">THỐNG KÊ PHÒNG</div>
+                    <div class="container p-10">
+                        <div class="statistic-info center">
+                            <span>Số lượng phòng đã cho thuê</span>
+                            <span class="span_tongPhongThu">100</span>
+                        </div>
+                        <div class="statistic-info center">
+                            <span>Số lượng phòng còn trống (chưa thuê)</span>
+                            <span class="span_tongPhongChuaThue">100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/admin/base.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+<script src="../../js/admin/statistic.js"></script>
+
+</html>

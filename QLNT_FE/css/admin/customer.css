@@ -1,0 +1,256 @@
+.customer-list__wrapper {
+    position: relative;
+}
+
+.customer-list__title {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.customer-list__wrapper .add-customer {
+    color: white;
+    background-color: #479FFF;
+    font-size: 20px;
+    width: 13vw;
+    margin-top: 24px;
+    font-weight: 600;
+    border-radius: 10px;
+    position: absolute;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.customer-list__tool {
+    width: 60%;
+    font-size: 20px;
+    white-space: nowrap;
+    background-color: var(--modal-background);
+    border-radius: 30px;
+    justify-content: space-between;
+}
+
+#filter-tool,
+#search-tool {
+    background-color: white;
+    border-radius: 30px;
+    margin: 4px;
+}
+
+#search-tool input {
+    width: 12vw;
+    margin: 4px;
+    font-size: 20px;
+    background-color: var(--modal-background);
+    border-radius: 30px;
+    padding: 6px 10px;
+}
+
+.select-field select {
+    background-color: var(--modal-background);
+    appearance: none;
+    height: 100%;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 6px 20px;
+    margin-right: 4px;
+}
+
+.table-wrapper {
+    height: 64vh;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.customer-list__wrapper table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.customer-list__wrapper table thead tr {
+    position: sticky;
+    top: 0;
+    background-color: #66b0ff;
+}
+
+.customer-list__wrapper table th {
+    font-size: 20px;
+    color: white;
+    height: 5vh;
+    cursor: pointer;
+}
+
+.customer-list__wrapper table th i {
+    margin-left: 10px;
+}
+
+.customer-list__wrapper table td {
+    font-size: 22px;
+    height: 62px;
+    text-align: center;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.customer-list__wrapper table tr:nth-child(even) {
+    background-color: #E2EFFD;
+}
+
+/* Modal thêm */
+.modal-customer .modal-container {
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}
+
+.modal-container .modal-wrapper {
+    display:  grid;
+    grid-template-columns: auto auto;
+}
+
+.customer-info + .customer-history {
+    margin-left: 10px;
+}
+
+.customer-info{
+    width: 32vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-name {
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: white;
+    border-radius: 15px;
+    color: #0094FF;
+    min-height: 52px;
+    margin-bottom: 10px;
+}
+.modal-name .room-id {
+    background-color: var(--modal-background);
+    margin: 4px;
+    border-radius: 12px;
+}
+.modal-name .room-id span {
+    margin: 0 10px;
+}
+.modal-name .room-id select {
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 4px;
+    padding: 4px 20px;
+    appearance: none;
+}
+
+.modal-form {
+    flex: 1;
+    background-color: white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input-wrapper {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-wrapper label {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.input-wrapper input:not([type="radio"]) {
+    background-color: var(--modal-background);
+    height: 40px;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.customer-history {
+    width: 16vw;
+}
+
+.history-list {
+    overflow-y: scroll;
+    max-height: 50vh;
+}
+
+.history-list::-webkit-scrollbar{
+    display: none;
+}
+
+.history-record {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.history-record + .history-record{
+    margin-top: 10px;
+}
+
+.history-record div + div{
+    margin-top: 8px;
+}
+
+.room-change img{
+    color: black;
+    font-size: 32px;
+    margin: 0 12px;
+}
+
+.room-old, .room-new {
+    background-color: #479FFF;
+    color: white;
+    padding: 2px;
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 10px;
+}
+
+.begin-date, .end-date {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+#begin-date, #end-date {
+    text-align: center;
+}
+
+/* Modal xác nhận xóa */
+.modal-customer__delete .modal-container {
+    width: 22vw;
+    background-color: var(--modal-background);
+    border-radius: 20px;
+}
+.modal-customer__delete .modal-name {
+    font-size: 28px;
+    font-weight: 600;
+    color: black;
+    background-color: var(--modal-background);
+}
+
+.modal-customer__delete .modal-message{
+    font-size: 20px;
+}
+
+.modal-customer__delete .accept-btn{
+    background-color: #FF2A2A;
+}

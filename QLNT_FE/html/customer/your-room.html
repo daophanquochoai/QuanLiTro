@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./../../../css/customer/your-room.css">
+    <link rel="stylesheet" type="text/css" href="./../../../css/customer/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Phòng của bạn</title>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div id="toast"></div>
+        <div class="wrapper">
+            <div class="wrapper-content">
+                <div class="title-page">
+                    <p class="wrapper-title">THÔNG TIN VỀ PHÒNG CỦA BẠN</p>
+                </div>
+                <div class="show-info">
+                    <div class="room-info">
+                        <div class="room-number">
+                            <h3>Phòng</h3>
+                            <h1 id="room"></h1>
+                        </div>
+                        <div class="detail-info">
+                            <table class="list-info">
+                                <tr id="price">
+                                    <td class="larger">Giá phòng</td>
+                                    <td class="bolder" id="roomPrice"></td>
+                                </tr>
+                                <tr id="categogry">
+                                    <td class="larger">Loại phòng</td>
+                                    <td class="bolder" id="typeRoom"></td>
+                                </tr>
+                                <tr id="limit">
+                                    <td class="larger">Sức chứa</td>
+                                    <td class="bolder" id="limitRoom"></td>
+                                </tr>
+                                <tr id="using-time">
+                                    <td class="larger">Thời gian thuê</td>
+                                    <td style="text-wrap: nowrap;">từ <span id="startTime" style="font-weight: 600; font-size: 18px;"></span> đến <span id="endTime" style="font-weight: 600; font-size: 18px;"></span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="roommate-info">
+                        <div class="title-roommate">
+                            <h4>THÔNG TIN VỀ NGƯỜI CÙNG PHÒNG CỦA BẠN</h4>
+                        </div>
+    
+                        <div class="show-info-roommate">
+                            <table id="table-roommate">
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="show__service">
+                        <div id="title__show__service">
+                            <span>DỊCH VỤ ĐÃ ĐĂNG KÍ</span>
+                        </div>
+                        <div id="wrapper__body">
+                            <table id="list__all__service">
+                                <!-- <tr id="each__service">
+                                    <td class="content__table__service" style="padding-left: 20px;">Wifi</td>
+                                    <td class="content__table__service" style="padding-left: 30px;">01/01/2024</td>
+                                    <td class="content__table__service" style="padding-left: 10px;">01/02/2024</td>
+                                    <td class="content__table__service" style="padding-left: 20px;">1</td>
+                                    <td class="content__table__service">100,000</td>
+                                </tr> -->
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="wrapper__cancel__service">
+            <form id="cancel__service__form">
+                <span id="title__cancel__service_form">Xác nhận gửi yêu cầu hủy dịch vụ</span>
+                <div class="body__cancel__service__form">
+                    <span id="content__cancel__service">Bạn có chắc chắn muốn hủy dịch vụ này không ?</span>
+                </div>
+                <div id="handle__cancel__service">
+                    <button id="refuse__cancel__service__btn" type="button">Hủy</button>
+                    <button id="accept__service__btn" type="submit">Chắc chắn</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../../js/customer/base.js"></script>
+<script src="../../js/customer/your-room.js"></script>
+</html>
+
+
+
+
+

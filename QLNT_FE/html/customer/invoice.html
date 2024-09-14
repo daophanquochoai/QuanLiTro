@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./../../../css/customer/invoice.css">
+    <link rel="stylesheet" type="text/css" href="./../../../css/customer/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Hóa đơn</title>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div id="toast"></div>
+        
+        <div class="wrapper">
+
+            <div class="wrapper-title">
+                <h1>Xem hóa đơn</h1>
+            </div>
+            <div id="invoice__status">
+                <h4 id="title__status">Trạng thái: </h4>
+                <div id="wrapper__content__status">
+                </div>
+            </div>
+            <div class="body">
+                
+                <div class="wrapper-detail">
+                    
+                    <div class="outside-invoice">
+    
+                        <div class="outside-title">
+                            <div id="title">
+                                <h4 id="render__title">Chi tiết hóa đơn số ___</h4>
+                            </div>
+                        </div>
+                        
+                        <div id="room-number">
+                            <h3>Phòng</h3>
+                            <h1 id="room">___</h1>
+                        </div>
+    
+                        <div id="using-time">
+                            <h4>Từ 
+                                <span id="startTime" style="font-weight: 600;">--/--/----</span> 
+                                đến <span id="endTime" style="font-weight: 600;">--/--/----</span>
+                            </h4>
+                        </div>
+    
+                        <div class="detail-invoice">
+                            <div style="grid-column-start: 1; grid-column-end: 6">
+                                <div class="header-invoice">
+                                    <span></span>
+                                    <span>Chỉ số</span>
+                                    <span>Giá</span>
+                                    <span>Đơn vị</span>
+                                    <span>Thành tiền</span>
+                                </div>
+                            </div>
+    
+                            <div id="wrapper__detail__invoice">
+                                <div style="grid-column-start: 1; grid-column-end: 6">
+                                    <div class="room-price">
+                                        <span>Giá phòng</span>
+                                        <span style="font-weight: 600;">1</span>
+                                        <span id="priceRoom" style="font-weight: 600;">___</span>
+                                        <span>VND</span>
+                                        <span id="totalRoom" style="font-weight: 600;">___</span>
+                                    </div>
+                                </div>
+        
+                                <div style="grid-column-start: 1; grid-column-end: 6">
+                                    <div class="electric">
+                                        <span>Số điện ban đầu</span>
+                                        <span id="startElec" style="font-weight: 600;">___</span>
+                                        <span class="priceElec" style="font-weight: 600;">___</span>
+                                        <span>kWh</span>
+                                        <span style="font-weight: 600;"></span>
+        
+                                        <span>Số điện kết thúc</span>
+                                        <span id="endElec" style="font-weight: 600;">___</span>
+                                        <span class="priceElec" style="font-weight: 600;">___</span>
+                                        <span>kWh</span>
+                                        <span style="font-weight: 600;"></span>
+                                        
+                                        <span>Lượng sử dụng</span>
+                                        <span id="amountOfUsingElec" style="font-weight: 600;">___</span>
+                                        <span class="priceElec" style="font-weight: 600;">___</span>
+                                        <span>kWh</span>
+                                        <span id="totalElec" style="font-weight: 600;">___</span>
+                                    </div>
+                                </div>
+        
+                                <div style="grid-column-start: 1; grid-column-end: 6">
+                                    <div class="water">
+                                        <span>Số nước ban đầu</span>
+                                        <span id="startWater" style="font-weight: 600;">___</span>
+                                        <span class="priceWater" style="font-weight: 600;">___</span>
+                                        <span>m<sup>3</sup></span>
+                                        <span style="font-weight: 600;"></span>
+        
+                                        <span>Số nước kết thúc</span>
+                                        <span id="endWater" style="font-weight: 600;">___</span>
+                                        <span class="priceWater" style="font-weight: 600;">___</span>
+                                        <span>m<sup>3</sup></span>
+                                        <span style="font-weight: 600;"></span>
+                                        
+                                        <span>Lượng sử dụng</span>
+                                        <span id="amountOfUsingWater" style="font-weight: 600;">___</span>
+                                        <span class="priceWater" style="font-weight: 600;">___</span>
+                                        <span>m<sup>3</sup></span>
+                                        <span id="totalWater" style="font-weight: 600;">___</span>
+                                    </div>
+                                </div>
+        
+                                <div id="serviceField" style="grid-column-start: 1; grid-column-end: 6;">
+                                </div>
+                            </div>
+    
+                            <div style="grid-column-start: 1; grid-column-end: 6; ">
+                                <div class="header-total">
+                                    <span id="totalInvoice" style="font-weight: 600">Tổng</span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span id="totalPrice" style="font-weight: 600; font-size: larger;">0</span>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="note">
+                            <h4 name="noteTitle" style="font-weight: 600;">Ghi chú</h3>
+                            <textarea name="note" id="text-note" disabled></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="others">
+
+                    <div class="show-price">
+                        <div class="wrapper-price">
+                            <h4>BẢNG GIÁ ĐIỆN - NƯỚC</h4>
+                        </div>
+                        <div class="wrapper-body">
+                            <div class="elec-price">
+                                <div class="name"><h2 class="inside">ĐIỆN</h2></div>
+                                <div class="price">
+                                    <h1 class="inside" name="priceOfElec" id="electricityPrice"></h1>
+                                </div>
+                                <div class="change__date">
+                                    <h4 id="change__elec__date">12/10/2022</h4>
+                                </div>
+                            </div>
+            
+                            <div class="water-price">
+                                <div class="name"><h2 class="inside">NƯỚC</h2></div>
+                                <div class="price">
+                                    <h1 class="inside" name="priceOfWater" id="waterPrice"></h1>
+                                </div>
+                                <div class="change__date">
+                                    <h4 id="change__water__date">12/10/2022</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="wrapper__lookup__invoice">
+                        <h4 id="title__lookup__invoice">TRA CỨU HÓA ĐƠN</h4>
+                        <div id="wrapper__body__lookup">
+                            <div id="choose__month">
+                                <label for="lookup__invoice">Nhập tháng, năm muốn xem lại hóa đơn</label>
+                                <input type="month" id="lookup__invoice">
+                                <h4 id="warning__year"></h4>
+                            </div>
+                            <div id="wrapper__lookup__button">
+                                <button id="lookup__btn" disabled>Tra cứu</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="history-invoice">
+                        <div class="wrapper-history">
+                            <h4>DANH SÁCH HÓA ĐƠN</h4>
+                        </div>
+        
+                        <div class="outside-body">
+                            <div class="wrapper-body-history">
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">01</h2>
+                                </div>
+            
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">02</h2>
+                                </div>
+            
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">03</h2>
+                                </div>
+                                
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">04</h2>
+                                </div>
+            
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    <h2 class="each__month">05</h2>
+                                </div>
+            
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">06</h2>
+                                </div>
+            
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">07</h2>
+                                </div>
+            
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">08</h2>
+                                </div>
+            
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">09</h2>
+                                </div>
+            
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">10</h2>
+                                </div>
+            
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">11</h2>
+                                </div>
+            
+                                <div class="month">
+                                    <h4>Tháng</h4>
+                                    
+                                    <h2 class="each__month">12</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+        
+                </div>
+
+
+            </div>
+    
+            
+        </div>
+
+        <!-- Dialog to show invoice of each month -->
+        <div class="background">
+            <div>
+                <h4 id="title__result__lookup">----- Kết quả tra cứu -----</h4>
+            </div>
+            <div class="wrapper_detail_dialog">
+                <div class="outside-invoice-dialog">
+                    <div class="outside-title-dialog">
+                        <div id="title">
+                            <h4 id="number__bill">Chi tiết hóa đơn số</h4>
+                        </div>
+                    </div>
+                    
+                    <div id="room-number-dialog">
+                        <h3>Phòng</h3>
+                        <h1 id="number__of__room">136</h1>
+                    </div>
+    
+                    <div id="using-time">
+                        <h4>Từ 
+                            <span id="start__time__dialog" style="font-weight: 600;">19/02/2024</span> 
+                            đến <span id="end__time__dialog" style="font-weight: 600;">19/03/2024</span>
+                        </h4>
+                    </div>
+    
+                    <div class="detail-invoice">
+                        <div style="grid-column-start: 1; grid-column-end: 6">
+                            <div class="header-invoice">
+                                <span></span>
+                                <span>Chỉ số</span>
+                                <span>Giá</span>
+                                <span>Đơn vị</span>
+                                <span>Thành tiền</span>
+                            </div>
+                        </div>
+    
+                        <div id="wrapper__detail__invoice__month">
+                            <div style="grid-column-start: 1; grid-column-end: 6">
+                                <div class="room-price">
+                                    <span>Giá phòng</span>
+                                    <span style="font-weight: 600;">1</span>
+                                    <span id="room__price__dialog" style="font-weight: 600;">2.500.000</span>
+                                    <span>VND</span>
+                                    <span id="total_room__price" style="font-weight: 600;">2.500.000</span>
+                                </div>
+                            </div>
+        
+                            <div style="grid-column-start: 1; grid-column-end: 6">
+                                <div class="electric">
+                                    <span>Số điện ban đầu</span>
+                                    <span id="start__elec__dialog" style="font-weight: 600;">230.0</span>
+                                    <span class="elec__quotation" style="font-weight: 600;">4.500</span>
+                                    <span>kWh</span>
+                                    <span style="font-weight: 600;"></span>
+        
+                                    <span>Số điện kết thúc</span>
+                                    <span id="end__elec__dialog" style="font-weight: 600;">230.0</span>
+                                    <span class="elec__quotation" style="font-weight: 600;">4.500</span>
+                                    <span>kWh</span>
+                                    <span style="font-weight: 600;"></span>
+                                    
+                                    <span>Lượng sử dụng</span>
+                                    <span id="amount_of__elec" style="font-weight: 600;">230.0</span>
+                                    <span class="elec__quotation" style="font-weight: 600;">4.500</span>
+                                    <span>kWh</span>
+                                    <span id="total__elec__dialog" style="font-weight: 600;">150.000</span>
+                                </div>
+                            </div>
+        
+                            <div style="grid-column-start: 1; grid-column-end: 6">
+                                <div class="water">
+                                    <span>Số nước ban đầu</span>
+                                    <span id="start__water__dialog" style="font-weight: 600;">230.0</span>
+                                    <span class="water__quotation" style="font-weight: 600;">4.500</span>
+                                    <span>m<sup>3</sup></span>
+                                    <span style="font-weight: 600;"></span>
+        
+                                    <span>Số nước kết thúc</span>
+                                    <span id="end__water__dialog" style="font-weight: 600;">230.0</span>
+                                    <span class="water__quotation" style="font-weight: 600;">4.500</span>
+                                    <span>m<sup>3</sup></span>
+                                    <span style="font-weight: 600;"></span>
+                                    
+                                    <span>Lượng sử dụng</span>
+                                    <span id="amount__of__water" style="font-weight: 600;">230.0</span>
+                                    <span class="water__quotation" style="font-weight: 600;">4.500</span>
+                                    <span>m<sup>3</sup></span>
+                                    <span id="total__water__dialog" style="font-weight: 600;">150.000</span>
+                                </div>
+                            </div>
+        
+                            <div id="service__field__dialog" style="grid-column-start: 1; grid-column-end: 6">
+                            </div>
+                        </div>
+    
+                        <div style="grid-column-start: 1; grid-column-end: 6; ">
+                            <div class="header-total">
+                                <span style="font-weight: 600;">Tổng</span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span id="total__invoice__dialog" style="font-weight: 600; font-size: larger;">2.750.000</span>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <div class="note">
+                        <h4 style="font-weight: 600;">Ghi chú</h3>
+                        <textarea id="text-note" class="textnote__area" name="note" disabled></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="../../js/customer/invoice.js"></script>
+<script src="../../js/customer/base.js"></script>
+</html>
+
+
+
+
+

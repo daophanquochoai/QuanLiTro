@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLNT</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../../css/admin/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/admin/room.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div id="toast"></div>
+    <div class="main-content">
+        <div class="room-list__wrapper m-20">
+            <div class="room-list__title">DANH SÁCH PHÒNG TRỌ</div>
+            <div class="room-list__tool center m-20">
+                <div class="tool center">
+                    <div id="filter-tool" class="center">
+                        <span class="p-10">Lọc</span>
+                        <div class="select-field">
+                            <select class="filter-field">
+                                <option value="0">Tất cả</option>
+                                <option value="1">Chưa thuê</option>
+                                <option value="2">Còn chỗ</option>
+                                <option value="3">Đầy</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="search-tool" class="center">
+                        <label>
+                            <input type="search" placeholder="Tìm kiếm" name="" autocomplete="off">
+                        </label>
+                        <div class="select-field center">
+                            <select class="search-field">
+                                <option value="1">Số phòng</option>
+                                <option value="2">Loại phòng</option>
+                                <option value="3">Giá phòng</option>
+                                <option value="4">Sức chứa</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <button class="add-room">
+                        Thêm
+                        <i class="fa-solid fa-caret-down"></i>
+                    </button>
+                    <div class="add-option p-10">
+                        <div class="add-option-wrapper">
+                            <button onclick="openAddRoomModal()" class="add-room">
+                                Thêm phòng
+                            </button>
+                            <button onclick="openAddRoomTypeModal()" class="add-room-type">
+                                Thêm loại phòng
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">STT<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 15%;">SỐ PHÒNG<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 17%;">LOẠI PHÒNG<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 13%;">SỨC CHỨA<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 20%;">GIÁ PHÒNG<i class="fa-solid fa-sort"></i></th>
+                            <th style="width: 25%;">THAO TÁC</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-room">
+        <div class="modal-container p-10">
+            <form>
+                <div class="modal-name center"></div>
+                <div class="modal-form center p-20">
+                    <div class="input-wrapper">
+                        <label for="room_id">Số phòng:</label>
+                        <input type="number" id="room_id" min="1" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="room-type_id">Loại phòng:</label>
+                        <select id="room-type_id" required>
+                            <!-- đổ data ở đây -->
+                        </select>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="limit">Sức chứa:</label>
+                        <input type="number" id="limit" min="0" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="price">Giá phòng:</label>
+                        <input type="number" id="price" min="0" required>
+                    </div>
+                </div>
+                <div class="modal-btn center">
+                    <button type="button" class="refuse-btn">Hủy</button>
+                    <button type="submit" class="accept-btn"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal modal-room__detail">
+        <div class="modal-container p-10">
+            <div class="modal-name center">THÔNG TIN CHI TIẾT</div>
+            <div class="detail-info center">
+                <div class="detail-info__left">
+                    <div class="room-info__wrapper">
+                        <div class="room-info p-10">
+                            <div class="room-id">
+                                <span>Phòng</span>
+                                <span id="room_id"></span>
+                            </div>
+                            <div class="room-detail-info">
+                                <span>
+                                    Giá phòng: <span id="price"></span>
+                                </span>
+                                <span>
+                                    Sức chứa: <span id="limit"></span>
+                                </span>
+                                <span>
+                                    Loại phòng: <span id="room-type_name"></span>
+                                </span>
+                                <span>
+                                    Đang ở: <span id="staying"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customer-info p-10">
+                        <h3 class="info-name center ">Danh sách khách hàng đang thuê phòng</h3>
+                        <div class="header-table center">
+                            <span style="width: 10%;">STT</i></span>
+                            <span style="width: 60%;">Họ tên</i></span>
+                            <span style="width: 30%;">SĐT</span>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10%;"></i></th>
+                                        <th style="width: 60%;"></i></th>
+                                        <th style="width: 30%;"></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <form class="detail-info__right service-info p-10">
+                    <h3 class="info-name center">Dịch vụ đang sử dụng</h3>
+                    <div class="header-table center p-10">
+                        <span style="width: 60%; text-align: start;">Tên dịch vụ</span>
+                        <span style="width: 10%;">SL</span>
+                        <span style="width: 30%;">Mức giá</span>
+                    </div>
+                    <div class="table-wrapper p-10">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width: 60%; text-align: start;"></th>
+                                    <th style="width: 10%;"></th>
+                                    <th style="width: 30%;"></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="modal-btn center">
+                        <button style="display: none;" class="refuse-btn">Hủy</button>
+                        <button type="submit" class="accept-btn">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-room-type">
+        <div class="modal-container p-10">
+            <form>
+                <div class="modal-name center">Thêm loại phòng</div>
+                <div class="modal-form center p-20">
+                    <div class="input-wrapper">
+                        <label for="room-type_name">Nhập tên loại phòng:</label>
+                        <input type="text" id="room-type_name" required>
+                    </div>
+                    <button style="display: none;" class="refuse-btn">Hủy</button>
+                    <button type="submit" class="accept-btn">Thêm</button>
+                </div>
+            </form>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">STT</i></th>
+                            <th style="width: 60%;">Loại phòng</i></th>
+                            <th style="width: 25%;">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-delete">
+        <div class="modal-container p-10">
+            <form>
+                <div class="modal-name center"> Xác nhận</div>
+                <div class="modal-message">
+                    Bạn có chắc chắn muốn xóa không ?
+                </div>
+                <div class="modal-btn center">
+                    <button type="button" class="refuse-btn">Hủy</button>
+                    <button type="submit" class="delete-btn">Xóa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../../js/admin/base.js"></script>
+<script src="../../js/admin/room.js"></script>
+
+</html>

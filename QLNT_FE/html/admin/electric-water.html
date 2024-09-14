@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLNT</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../../css/admin/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/admin/electric-water.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div id="toast"></div>
+    <div class="main-content">
+        <div class="electric-water__wrapper m-20">
+            <div class="electric-water__title">GIÁ ĐIỆN NƯỚC</div>
+            <div class="electric-water__container center">
+                <div class="electric-container" onkeydown="return event.key != 'Enter'">
+                    <fieldset>
+                        <legend>ĐIỆN</legend>
+                        <div class="current-price m-20">
+                            <label for="">Mức giá hiện tại</label>
+                            <input type="number" class="inputElec" min="0">
+                        </div>
+                        <div class="history-price m-20">
+                            <label for="">Lịch sử thay đổi</label>
+                            <div class="table-wrapper">
+                                <table class="history-price__table">
+                                    <thead>
+                                        <tr>
+                                            <th>Mức giá</th>
+                                            <th>Thời gian</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- data đổ vào  -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="water-container" onkeydown="return event.key != 'Enter'">
+                    <fieldset>
+                        <legend>NƯỚC</legend>
+                        <div class="current-price m-20">
+                            <label for="">Mức giá hiện tại</label>
+                            <input type="number" class="inputWater" min="0">
+                        </div>
+                        <div class="history-price m-20">
+                            <label for="">Lịch sử thay đổi</label>
+                            <div class="table-wrapper">
+                                <table class="history-price__table priceWater">
+                                    <thead>
+                                        <tr>
+                                            <th>Mức giá</th>
+                                            <th>Thời gian</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- data đổ vào  -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-confirm">
+        <div class="modal-container p-10">
+            <div>
+                <div class="modal-name center"> Xác nhận</div>
+                <div class="modal-message">
+                    Bạn có chắc chắn muốn thay đổi không ?
+                </div>
+                <div class="modal-btn center">
+                    <button class="refuse-btn">Hủy</button>
+                    <button class="accept-btn">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/admin/base.js"></script>
+<script src="../../js/admin/electric-water.js"></script>
+
+</html>
